@@ -2,6 +2,8 @@ items = []
 cost_of_items = []
 
 def get_total_expenses(dictionary):
+    """Get the price of all expenses """
+    
     total = 0
 
     cost_list = list(dictionary.values())
@@ -12,17 +14,25 @@ def get_total_expenses(dictionary):
     return total
 
 def add_to_list(item, cost):
+    """Adds user input to list"""
+
     items.append(item)
     cost_of_items.append(cost)
 
-    result = make_dictionary()
-    print(result)
+    make_dictionary()
+    
 
 def make_dictionary():
+    """
+    Added all items and cost to dictionary to make it associated with its price
+    """
+
     item_cost = dict(zip(items, cost_of_items))
     return item_cost
 
 def get_user_input():
+    """Get users input their expenses"""
+
     while True:
         user_item = input("What did you buy? ")
         if user_item == 'q':
