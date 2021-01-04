@@ -1,15 +1,18 @@
 items = []
 cost_of_items = []
+total = ""
 
 
 def inform_user():
     """Let user know what they are spending their money on"""
+
+    print("In total you spent $" + str(total) + ".")
     pass
 
 
 def get_total_expenses(dictionary):
     """Get the price of all expenses """
-
+    global total
     total = 0
 
     cost_list = list(dictionary.values())
@@ -46,14 +49,21 @@ def get_user_input():
         if user_item == "q":
             break
 
-        user_item_cost = input("How much did it cost you? ")
+        user_item_cost = int(input("How much did it cost you? "))
+        # BUG
         if user_item_cost == "q":
             break
+        # Checks to see if input for user item cost is number
+        if isinstance(user_item_cost, int):
+            add_to_list(user_item, user_item_cost)
+        else:
+            print("Please start over with your item")
+            continue
 
-        add_to_list(user_item, user_item_cost)
         continue
 
 
 get_user_input()
 all_expenses = make_dictionary()
 print(get_total_expenses(all_expenses))
+print(inform_user())
