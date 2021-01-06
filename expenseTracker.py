@@ -49,16 +49,16 @@ def get_user_input():
         if user_item == "q":
             break
 
-        user_item_cost = int(input("How much did it cost you? "))
-        # BUG
+        user_item_cost = input("How much did it cost you? ")
         if user_item_cost == "q":
             break
+
         # Checks to see if input for user item cost is number
-        if isinstance(user_item_cost, int):
+        if user_item_cost.isdigit():
+            user_item_cost = int(user_item_cost)
             add_to_list(user_item, user_item_cost)
         else:
-            print("Please start over with your item")
-            continue
+            print("Please use numbers for the how much did it cost you prompt")
 
         continue
 
