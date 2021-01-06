@@ -1,6 +1,17 @@
+import csv
+
+# Created empty lists to store all of the items and costs
 items = []
 cost_of_items = []
 total = ""
+
+
+def write_to_csv(dictionary):
+    """Write to a csv file with all information concerning expenses"""
+    dictionary
+    with open("test.csv", "w") as f:
+        for key in dictionary.keys():
+            f.write("%s, %s\n" % (key, dictionary[key]))
 
 
 def inform_user():
@@ -65,5 +76,4 @@ def get_user_input():
 
 get_user_input()
 all_expenses = make_dictionary()
-print(get_total_expenses(all_expenses))
-print(inform_user())
+write_to_csv(all_expenses)
