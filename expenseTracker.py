@@ -9,7 +9,7 @@ total = ""
 def write_to_csv(dictionary):
     """Write to a csv file with all information concerning expenses"""
     dictionary
-    with open("test.csv", "w") as f:
+    with open("Tracked_Expenses.csv", "w") as f:
         for key in dictionary.keys():
             f.write("%s, %s\n" % (key, dictionary[key]))
 
