@@ -56,11 +56,11 @@ def get_user_input():
     """Get users input their expenses"""
 
     while True:
-        user_item = input("What did you buy? ")
+        user_item = input("What was the expense you paid for? ")
         if user_item == "q":
             break
 
-        user_item_cost = input("How much did it cost you? ")
+        user_item_cost = input("How much did the expense cost you? ")
         if user_item_cost == "q":
             break
 
