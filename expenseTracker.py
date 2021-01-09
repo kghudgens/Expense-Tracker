@@ -8,10 +8,14 @@ total = ""
 
 def write_to_csv(dictionary):
     """Write to a csv file with all information concerning expenses"""
+
+    header = ["Expense", "Price"]
     dictionary
     with open("Tracked_Expenses.csv", "w") as f:
+        writer = csv.writer(f, delimiter=",")
+        writer.writerow(i for i in header)
         for key in dictionary.keys():
-            f.write("%s, %s\n" % (key, dictionary[key]))
+            f.write("%s, $%s\n" % (key, dictionary[key]))
 
 
 def inform_user():
