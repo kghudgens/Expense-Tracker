@@ -78,6 +78,6 @@ def get_user_input():
         continue
 
 
-get_user_input()
-all_expenses = make_dictionary()
-write_to_csv(all_expenses)
+# get_user_input()
+# all_expenses = make_dictionary()
+# write_to_csv(all_expenses)
