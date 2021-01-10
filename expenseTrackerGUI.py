@@ -1,6 +1,5 @@
-from PyQt5.QtWidgets import QApplication, QLabel
+from tkinter import *
 
-app = QApplication([])
-label = QLabel("Hello World")
-label.show()
-app.exec_()
+root = Tk()
+
+root.mainloop()
